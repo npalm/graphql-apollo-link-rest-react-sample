@@ -16,6 +16,7 @@ export const GET_TALKS = gql`
 export interface Talk {
   id: number;
   title: string;
+  speakers: Speaker[];
 }
 
 export interface SpeakersData {

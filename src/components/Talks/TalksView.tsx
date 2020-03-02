@@ -21,7 +21,8 @@ class TalksView extends PureComponent<Props> {
       <ul>
         {talks.map(talk => <li key={talk.id}>
           {talk.title}
-          {/* talk.speakers.map(speaker => <li key={speaker.id}>{speaker.name}</li>) */}
+          {/* {JSON.stringify(talk)} */}
+          {talk.speakers.map(speaker => <li key={speaker.id}>{speaker.name}</li>)}
         </li>)}
       </ul>
     )
