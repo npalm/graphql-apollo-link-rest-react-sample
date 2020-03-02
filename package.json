@@ -22,6 +22,7 @@
     "react-apollo": "^2.4.1",
     "react-dom": "^16.13.0",
     "react-scripts": "3.4.0",
+    "semantic-ui-react": "^0.88.2",
     "typescript": "~3.7.2"
   },
   "scripts": {

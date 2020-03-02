@@ -5,6 +5,7 @@ export const GET_TALKS = gql`
     talks @rest(type: "Talk", path: "talks/") {
       title
       id @export(as: "id")
+      summary
       speakers @rest(type: "Speaker", path: "talks/:id/speakers") {
         name
         id
@@ -16,6 +17,7 @@ export const GET_TALKS = gql`
 export interface Talk {
   id: number;
   title: string;
+  summary: string;
   speakers: Speaker[];
 }
 
