@@ -16,7 +16,7 @@ const TalkCard = (talk: Talk) => {
 
   return (
     <Grid.Column>
-      <Card>
+      <Card style={{ maxHeight: 280, height: 280 }}>
         <Card.Content>
           <Card.Header>{talk.title}</Card.Header>
           <Card.Description style={{ textAlign: 'left', maxHeight: 60, height: 60, overflow: 'hidden' }}>
