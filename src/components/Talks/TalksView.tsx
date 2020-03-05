@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import { Speaker, Talk, TalksData } from '../../apis/talks';
-import { Feed, Container, Grid, Card } from 'semantic-ui-react'
-
+import { Feed, Container, Grid, Card, Icon } from 'semantic-ui-react'
+import styled from 'styled-components'
 
 interface Props {
   data?: TalksData;
@@ -12,24 +12,34 @@ interface TalkCardProps {
   talk: Talk;
 }
 
+
+
+const StyledCard = styled(Card)`
+  #border-color: 2px solid red;
+  #border-radius: 30px;
+  font-weight: bold;
+  height: 280px;
+  max-height: 280px;
+`
+
+
 const TalkCard = (talk: Talk) => {
 
   return (
     <Grid.Column>
-      <Card style={{ maxHeight: 280, height: 280 }}>
+      <StyledCard >
         <Card.Content>
           <Card.Header>{talk.title}</Card.Header>
-          <Card.Description style={{ textAlign: 'left', maxHeight: 60, height: 60, overflow: 'hidden' }}>
-            {talk.summary}
-          </Card.Description>
-        </Card.Content>
-
-        <Card.Content>
           {talk.speakers.map(speaker => {
             return <SpeakerCard key={speaker.id} {...speaker} />
           })}
+          <Card.Description style={{ textAlign: 'left', maxHeight: 60, height: 60, overflow: 'hidden' }}>
+            {talk.summary}
+          </Card.Description>
+
+
         </Card.Content>
-      </Card>
+      </StyledCard>
     </Grid.Column>
   )
 }
@@ -39,6 +49,7 @@ const SpeakerCard = (speaker: Speaker) => {
   return (
     <Feed>
       <Feed.Event>
+        <Icon name='user' />
         <Feed.Label content={speaker.name} />
 
       </Feed.Event>
